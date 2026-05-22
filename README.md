@@ -52,6 +52,103 @@ Here's exactly how it works:
 
 ---
 
+## New to this? Start here.
+
+Never used GitHub or the Terminal before? That's okay. This section is for you. The setup takes about 15 minutes and you only have to do it once.
+
+### What you're actually doing
+
+ApplyTrail is an app that runs on your own computer — like opening Spotify or Chrome, except you launch it through a window called Terminal. Once it's running, you use it in your regular web browser at a private address only your computer can see.
+
+You don't need to understand code to use it. You just need to follow these steps once.
+
+---
+
+### Step 1 — Install Node.js
+
+Node.js is the engine that runs ApplyTrail. Think of it like installing a language your computer needs in order to understand the app.
+
+1. Go to [nodejs.org](https://nodejs.org)
+2. Click the big **"LTS"** download button (LTS = stable version)
+3. Open the downloaded file and follow the installer — it's like installing any other app
+4. When it's done, you can verify it worked: open Terminal (see Step 2) and type `node -v` — it should print a version number like `v20.0.0`
+
+---
+
+### Step 2 — Open Terminal
+
+Terminal is a text-based window that lets you run commands on your computer. It sounds scarier than it is.
+
+**On Mac:** Press **Cmd + Space**, type `Terminal`, press Enter.
+
+You'll see a window with a blinking cursor. This is where you'll paste the commands in the steps below. Each command does one specific thing — you don't need to understand them, just paste and press Enter.
+
+---
+
+### Step 3 — Download ApplyTrail
+
+In Terminal, paste this and press Enter:
+
+```bash
+git clone https://github.com/rutuu/applytrail.git
+cd applytrail
+npm install
+```
+
+This downloads the app to your computer and installs everything it needs. The `npm install` step might take a minute — that's normal.
+
+---
+
+### Step 4 — Set up Google access
+
+ApplyTrail needs permission to read your Gmail. This requires creating a free "app" in Google Cloud — it sounds technical but it's mostly clicking through forms.
+
+Follow the step-by-step instructions in the **Quick Start → Set up Google OAuth** section below. Come back here when you have your **Client ID** and **Client Secret**.
+
+---
+
+### Step 5 — Create your settings file
+
+In your `applytrail` folder, find the file called `.env.example`. 
+
+> **Can't see it?** On Mac, press **Cmd + Shift + .** in Finder to show hidden files.
+
+Make a copy of it and rename the copy to `.env.local`. Open it with any text editor (TextEdit works) and fill in the values:
+
+- `NEXTAUTH_SECRET` — open Terminal and run `openssl rand -base64 32`, then paste the result here
+- `NEXTAUTH_URL` — type `http://localhost:3000` exactly as shown
+- `GOOGLE_CLIENT_ID` — paste from Google Cloud
+- `GOOGLE_CLIENT_SECRET` — paste from Google Cloud
+- `DATABASE_URL` — type `file:./prisma/applytrail.db` exactly as shown
+
+Save the file. Make sure it's named `.env.local` (with the dot at the start).
+
+---
+
+### Step 6 — Start the app
+
+In Terminal, paste these two commands one at a time:
+
+```bash
+npm run db:push
+npm run dev
+```
+
+Then open your browser and go to **http://localhost:3000**
+
+You'll see the ApplyTrail landing page. Sign in with Google, click **Sync Gmail**, and your dashboard will populate.
+
+---
+
+### Stopping and starting the app
+
+- **To stop:** go to Terminal and press **Ctrl + C**
+- **To start again later:** open Terminal, navigate to the folder with `cd path/to/applytrail`, then run `npm run dev`
+
+The app only runs when you have it open in Terminal. Your data is saved locally so nothing is lost when you stop it.
+
+---
+
 ## Quick Start
 
 ### Prerequisites
