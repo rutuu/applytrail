@@ -5,8 +5,6 @@
 ApplyTrail connects to your Gmail and automatically finds every job application,
 interview invite, and rejection — so you always know where you stand.
 
-![ApplyTrail dashboard screenshot](docs/screenshot.png)
-
 ---
 
 ## What is this?
