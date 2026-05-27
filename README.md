@@ -310,13 +310,15 @@ applytrail/
 
 ## Contributing
 
-Contributions welcome! Some ideas for what's next:
+Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
-- [ ] AI fallback classification (OpenAI / Anthropic)
+Ideas for what's next:
+
 - [ ] Email body parsing for richer data extraction
-- [ ] Reminders for follow-ups
 - [ ] Bulk status editing
 - [ ] Dark mode
+- [ ] Outlook / other email provider support
+- [ ] Mobile-friendly layout
 
 Open an issue or submit a PR — all skill levels welcome.
 
